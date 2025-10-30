@@ -1,0 +1,136 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Interactivo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f8f9fa;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+/* 🔹 Barra superior fija */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #46729C;
+  display: flex;
+  justify-content: flex-start; /* ahora todo se alinea a la izquierda */
+  align-items: center;
+  padding: 18px 50px; /* espacio lateral */
+  z-index: 1000;
+  gap: 80px; /* espacio entre el logo y el menú */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+}
+nav {
+  display: flex;
+  justify-content: flex-start; /* menú también a la izquierda */
+  gap: 40px; /* separa los enlaces entre sí */
+}
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* 🔹 Ajuste del mapa para no ser tapado por la barra */
+iframe {
+  margin-top: 85px;
+  display: block;
+  width: 95vw;     /* mantiene margen lateral */
+  height: 82vh;    /* antes 90vh → ahora un poco más corto visualmente */
+  border: none;
+  margin-bottom: 20px; /* pequeño espacio inferior visual */
+}
+
+/* 🔹 Asegura que se pueda hacer scroll */
+html, body {
+  height: auto;
+  overflow-y: auto; /* habilita scroll vertical */
+}
+
+footer {
+  width: 100%;
+  background: #46729C;
+  border-top: 4px solid #46729C;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0 15px 120px; /* 🔹 margen izquierdo más amplio */
+  min-height: 90px;
+}
+
+footer img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #46729C;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 50px; /* espacio lateral */
+  z-index: 1000;
+  gap: 60px; /* espacio entre logo y menú */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-navbar {
+  height: 45px; /* ajustá este valor si querés que sea más grande o chico */
+  width: auto;
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+<header>
+<img src="logopuentesdedemocracia.png" alt="Puentes de Democracia" class="logo-navbar">
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Noticias</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
+
+  <iframe src="https://www.google.com/maps/d/embed?mid=1kJfEeSjdfBaAsNpUKZom-1Vmk1LuQvQ&ehbc=2E312F"></iframe>
+
+
+  <footer>
+  <img src="logopuentesdedemocracia.png" alt="Puentes de Democracia">
+</footer>
+
+</body>
+</html>
